@@ -1,0 +1,12 @@
+{% extends "layout.html" %} {% block title%}Add To-Do Page{% endblock %} 
+{% block body %}
+
+<div class="formDiv">
+    <form action="/addtask" method="post">
+        <label name="todo" for="todo">TODO</label>
+        <input type="text" id="todo" name="todo" placeholder="eg. Go to the market" required>
+        <input type="submit" value="Add">
+    </form>
+</div>
+
+{% endblock %}

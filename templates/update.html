@@ -1,0 +1,13 @@
+{% extends "layout.html" %} {% block title%} Update Page{% endblock %}
+{% block body %}
+
+<div class="formDiv">
+    <form action="/update/{{todo_id-1}}" method="post">
+        <label name="todo" for="todo">TODO</label>
+        <input type="text" id="todo" name="todo" value="{{todos}}" >
+        <input type="submit" value="Update">
+    </form>
+    <p>{{todo}}</p>
+</div>
+
+{% endblock %}

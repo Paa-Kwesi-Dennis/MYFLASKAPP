@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% block title%}Home Page{% endblock %} 
+{% block body %}
+<h1>{{todo}}</h1>
+<div class="formDiv">
+    <a href="/addtask"><button>Add Task</button></a>
+</div>
+<div class="todoTable">
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>To-Do</th>
+            <th>Date & Time</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for data in dataset %}
+            <tr>
+
+                <td>{{data[0]}}</td> <!--id-->
+                <td>{{data[1]}}</td><!--to-do-->
+                <td>{{data[2]}}</td> <!--time-->
+                <td id="submits">
+                    <button type="submit" class="btn" id="update"><a href="/update/{{data[0]}}">Update</a></button>
+                    <button type="submit" class="btn" id="delete">
+                        <a href="/delete/{{data[0]}}"onclick="return confirm('Are You Sure To Delete ? {{data[0]}}')">Delete</a>
+                    </button> 
+                </td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+
+
+
+</div>
+
+
+{% endblock %}
